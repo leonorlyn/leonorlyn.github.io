@@ -1,0 +1,82 @@
+.welcomeScreen {
+    color: white;
+    background-color: black;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fancy-button {
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+    z-index: 1;
+  }
+  
+  .fancy-button .shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-45deg);
+    transition: left 1s;
+    z-index: 1;
+  }
+  
+  .fancy-button:hover .shine {
+    left: 100% !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+  }
+  
+
+  .star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/star.png'); 
+    background-size: cover;
+    animation: float 3s infinite;
+    z-index: 1;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .star.disperse {
+    animation: disperse 1s forwards;
+  }
+  
+  @keyframes disperse {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2) translate(var(--dx), var(--dy));
+    }
+  }
+  
