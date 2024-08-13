@@ -2,9 +2,11 @@ import React, { useRef } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { Link } from 'react-scroll';
 import Introduction from './Introduction'; 
-import Experience from './Experience'; 
+import AboutMe from './AboutMe'; 
 import Portfolio from './Portfolio';
 import '../style/mainpage.css'; 
+import star from '../assets/3Dstar.png';
+import planet from '../assets/planet.png';
 
 const url = (name, wrap = false) =>
   `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
@@ -12,10 +14,9 @@ const url = (name, wrap = false) =>
 
 const MainPage = () => {
   const parallax = useRef(null);
-
-
   return (
-    <div style={{ width: '100%', height: '100%', background: '#253237', display: 'flex' }}>
+    // Navigation
+    <div style={{ width: '100%', height: '100%', background: 'secondary', display: 'flex' }}>
       <nav className="side-nav">
         <ul>
           <li>
@@ -55,27 +56,32 @@ const MainPage = () => {
       </nav>
 
 
-      <div style={{ width: '100%', height: '100%', background: '#253237' }}>
+      {/* main page scroll */}
+      <div style={{ width: '100%', height: '100%', backgroundColor: '#171616' }}>
       <Parallax ref={parallax} pages={3}>
         {/* Background Layers */}
+
+        <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
+        <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
+
         <ParallaxLayer
-          offset={100}
-          speed={50}
+          offset={0}
+          speed={5}
           factor={3}
           style={{
-            backgroundSize: 'cover',
+            Index:510,
+            // backgroundSize: 'cover',
+            backgroundColor: '#171616',
           }}
         />
+
 
         {/* Introduction Section */}
         <ParallaxLayer
           offset={0}
           speed={0.5}
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '50px',
+            zIndex: 1
           }}
         >
           <div id="introduction">
@@ -88,15 +94,11 @@ const MainPage = () => {
           offset={1}
           speed={0.5}
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '50px',
-            backgroundColor: '#805E73',
+            zIndex: 1
           }}
         >
           <div id="experience">
-            <Experience />
+            <AboutMe />
           </div>
         </ParallaxLayer>
 
@@ -117,8 +119,20 @@ const MainPage = () => {
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
-          <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
+        <ParallaxLayer
+          offset={0}
+          speed={0}
+          factor={3}
+          style={{
+            backgroundImage: url('stars', true),
+            backgroundSize: 'cover',
+          }}
+        />
+
+        <ParallaxLayer offset={0} speed={-1} factor={1} style={{ pointerEvents: 'none',zIndex:3 }}>
+          <img src={star} style={{ width: '5%', marginLeft: '78%', marginTop:'10%'}} />
+          <img src={star} style={{ width: '5%', marginLeft: '90%', marginTop:'20%'}} />
+          <img src={planet} style={{ width: '10%', marginLeft: '20%', marginTop:'0%'}} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
@@ -133,8 +147,7 @@ const MainPage = () => {
         {/* Scroll Interactions */}
         <ParallaxLayer
           offset={0}
-          speed={0.1}
-          onClick={() => parallax.current.scrollTo(1)}
+          speed={3}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -145,13 +158,12 @@ const MainPage = () => {
         <ParallaxLayer
           offset={1}
           speed={0.1}
-          onClick={() => parallax.current.scrollTo(2)}
+          // onClick={() => parallax.current.scrollTo(2)}
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <img src={url('bash')} style={{ width: '40%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -162,7 +174,9 @@ const MainPage = () => {
             alignItems: 'center',
             justifyContent: 'center',
           }}
-          onClick={() => parallax.current.scrollTo(0)}>
+          // onClick={() => parallax.current.scrollTo(0)}
+          >
+
           <img src={url('clients-main')} style={{ width: '40%' }} />
         </ParallaxLayer>
       </Parallax>
