@@ -70,7 +70,6 @@ const MainPage = () => {
           factor={3}
           style={{
             Index:510,
-            // backgroundSize: 'cover',
             backgroundColor: '#171616',
           }}
         />
@@ -129,10 +128,10 @@ const MainPage = () => {
           }}
         />
 
-        <ParallaxLayer offset={0} speed={-1} factor={1} style={{ pointerEvents: 'none',zIndex:3 }}>
+        <ParallaxLayer offset={0} speed={0.8} factor={1} style={{ pointerEvents: 'none', zIndex:3 }}>
           <img src={star} style={{ width: '5%', marginLeft: '78%', marginTop:'10%'}} />
           <img src={star} style={{ width: '5%', marginLeft: '90%', marginTop:'20%'}} />
-          <img src={planet} style={{ width: '10%', marginLeft: '20%', marginTop:'0%'}} />
+          <img src={planet} style={{ width: '10%', marginLeft: '5%', marginTop:'0%'}} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
