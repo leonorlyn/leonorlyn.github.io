@@ -9,7 +9,7 @@
     align-items: center;
     margin: 0;
     padding: 0;
-    z-index: 3;
+    z-index: 2;
   }
 
   .fancy-button {
@@ -48,10 +48,10 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    background-image: url('../assets/star.png'); 
+    background-image: url('../assets/star1.png'); 
     background-size: cover;
     animation: float 3s infinite;
-    z-index: 1;
+    z-index: 3;
   }
   
   @keyframes float {

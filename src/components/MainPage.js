@@ -7,6 +7,10 @@ import Portfolio from './Portfolio';
 import '../style/mainpage.css'; 
 import star from '../assets/3Dstar.png';
 import planet from '../assets/planet.png';
+import alien from '../assets/alien.png';
+import solar from '../assets/solar.png';
+
+
 
 const url = (name, wrap = false) =>
   `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
@@ -16,7 +20,7 @@ const MainPage = () => {
   const parallax = useRef(null);
   return (
     // Navigation
-    <div style={{ width: '100%', height: '100%', background: 'secondary', display: 'flex' }}>
+    <div style={{ width: '100%', height: '100%', display: 'flex' }}>
       <nav className="side-nav">
         <ul>
           <li>
@@ -57,20 +61,16 @@ const MainPage = () => {
 
 
       {/* main page scroll */}
-      <div style={{ width: '100%', height: '100%', backgroundColor: '#171616' }}>
+      <div style={{ width: '100%', height: '100%' }}>
       <Parallax ref={parallax} pages={3}>
-        {/* Background Layers */}
-
-        <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
-        <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
 
         <ParallaxLayer
           offset={0}
-          speed={5}
+          speed={0}
           factor={3}
           style={{
-            Index:510,
-            backgroundColor: '#171616',
+            Index:10,
+            backgroundColor: 'rgba(23, 22, 22, 0.4)'
           }}
         />
 
@@ -78,9 +78,9 @@ const MainPage = () => {
         {/* Introduction Section */}
         <ParallaxLayer
           offset={0}
-          speed={0.5}
+          speed={1}
           style={{
-            zIndex: 1
+            zIndex: 1,
           }}
         >
           <div id="introduction">
@@ -93,7 +93,7 @@ const MainPage = () => {
           offset={1}
           speed={0.5}
           style={{
-            zIndex: 1
+            zIndex: 1,
           }}
         >
           <div id="experience">
@@ -110,7 +110,7 @@ const MainPage = () => {
             alignItems: 'center',
             justifyContent: 'center',
             padding: '50px',
-            backgroundColor: '#87BCDE',
+            backgroundImage: 'rgba(0, 0, 0, 0.4)'
           }}
         >
           <div id="portfolio">
@@ -128,10 +128,13 @@ const MainPage = () => {
           }}
         />
 
+        <ParallaxLayer offset={0} speed={-0.4} factor={1} style={{ pointerEvents: 'none', zIndex:3 }}>
+          <img src={star} style={{ width: '5%', marginLeft: '78%', marginTop:'10%', filter: 'saturate(0.8)'}} />
+          <img src={star} style={{ width: '5%', marginLeft: '90%', marginTop:'30%'}} />
+        </ParallaxLayer>
+
         <ParallaxLayer offset={0} speed={0.8} factor={1} style={{ pointerEvents: 'none', zIndex:3 }}>
-          <img src={star} style={{ width: '5%', marginLeft: '78%', marginTop:'10%'}} />
-          <img src={star} style={{ width: '5%', marginLeft: '90%', marginTop:'20%'}} />
-          <img src={planet} style={{ width: '10%', marginLeft: '5%', marginTop:'0%'}} />
+          <img src={planet} style={{ width: '10%', marginLeft: '10%', marginTop:'35%', filter: 'saturate(0.7)'}} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
@@ -139,8 +142,8 @@ const MainPage = () => {
           <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.5} speed={-0.4} style={{ pointerEvents: 'none' }}>
-          <img src={url('earth')} style={{ width: '60%' }} />
+        <ParallaxLayer offset={1.3} speed={1} style={{ pointerEvents: 'none' }}>
+          <img src={solar} style={{ marginTop: '-0%', marginLeft:'0%', width: '35%'}} />
         </ParallaxLayer>
 
         {/* Scroll Interactions */}
@@ -157,7 +160,6 @@ const MainPage = () => {
         <ParallaxLayer
           offset={1}
           speed={0.1}
-          // onClick={() => parallax.current.scrollTo(2)}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -173,10 +175,7 @@ const MainPage = () => {
             alignItems: 'center',
             justifyContent: 'center',
           }}
-          // onClick={() => parallax.current.scrollTo(0)}
           >
-
-          <img src={url('clients-main')} style={{ width: '40%' }} />
         </ParallaxLayer>
       </Parallax>
     </div>

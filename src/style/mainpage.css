@@ -63,12 +63,11 @@ body, html {
   }
   
   .content-container {
-    margin-left: 300px; /* 留出导航栏的宽度 */
+    margin-left: 300px;
     padding: 20px;
     flex: 1;
   }
   
-  /* 各个板块的样式 */
   .section {
     margin-bottom: 100px;
     padding: 50px 20px;

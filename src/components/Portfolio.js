@@ -1,12 +1,16 @@
 import React from 'react';
+import { useSpring, animated } from '@react-spring/web';
+import '../style/aboutme.css';
 
-function Portfolio() {
+const Portfolio = () => {
+
   return (
-    <div id="portfolio" style={{ marginTop: '20px' }}>
-      <h2>My Portfolio</h2>
-      <p>这里展示我的作品。</p>
+    <div className="aboutme-container">
+      <animated.div className="aboutme-text">
+        <h2>Incoming</h2>
+      </animated.div>
     </div>
   );
-}
+};
 
 export default Portfolio;
