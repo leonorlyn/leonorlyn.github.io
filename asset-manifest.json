@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e43409d2.css",
-    "main.js": "/static/js/main.45486d8a.js",
+    "main.css": "/static/css/main.c7d8f6b3.css",
+    "main.js": "/static/js/main.b473234c.js",
     "static/js/453.41811d64.chunk.js": "/static/js/453.41811d64.chunk.js",
     "static/media/JoeyBaby.JPG": "/static/media/JoeyBaby.044081eea0c13c305d13.JPG",
     "static/media/Lena.JPG": "/static/media/Lena.0cf35d3a74b2754df47f.JPG",
@@ -11,17 +11,19 @@
     "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
     "static/media/planet.png": "/static/media/planet.758dddb7de0359fe15f7.png",
     "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.bb8d5a145e22822103fb.woff2",
+    "static/media/solar.png": "/static/media/solar.cbe82aad2887f150480d.png",
+    "static/media/alien.png": "/static/media/alien.2fddb269f625fc7de594.png",
     "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.17a6e1aebccdbaa39e78.ttf",
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.bc3722686635b5f86132.woff2",
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
     "index.html": "/index.html",
-    "main.e43409d2.css.map": "/static/css/main.e43409d2.css.map",
-    "main.45486d8a.js.map": "/static/js/main.45486d8a.js.map",
+    "main.c7d8f6b3.css.map": "/static/css/main.c7d8f6b3.css.map",
+    "main.b473234c.js.map": "/static/js/main.b473234c.js.map",
     "453.41811d64.chunk.js.map": "/static/js/453.41811d64.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e43409d2.css",
-    "static/js/main.45486d8a.js"
+    "static/css/main.c7d8f6b3.css",
+    "static/js/main.b473234c.js"
   ]
 }
