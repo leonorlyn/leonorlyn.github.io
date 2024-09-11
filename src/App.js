@@ -22,14 +22,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        {showWelcomeScreen ? (
+        {/* {showWelcomeScreen ? (
           <WelcomeScreen setShowWelcomeScreen={setShowWelcomeScreen} />
         ) : (
           <>
             <MainPage/>
           </>
-        )}
-        {/* <MainPage/> */}
+        )} */}
+        <MainPage/>
       </div>
     </ThemeProvider>
   );

@@ -1,0 +1,114 @@
+.portfolio-container {
+    padding: 20px;
+    max-width: 80%;
+    margin-left: 10%;
+    z-index:10000;
+  }
+
+  .portfolio-title {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 100px;
+    letter-spacing: 1.5px;
+  }
+  
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+  }
+  
+  .project-card {
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 80%;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255); /* 默认标题颜色 */
+    cursor: pointer;
+    transition: color 0.3s ease; 
+  }
+  
+  .project-title:hover {
+    color: #c8667b; 
+    /* text-decoration: underline;  */
+  }
+  
+  
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    /* background: white; */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%; 
+    height: 80%;
+    object-fit: cover;
+    text-align: center;
+    position: relative;
+  }
+  
+  .large-image {
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 60px;
+    cursor: pointer;
+    color: #de8c8c;
+  }
+  
+  .gallery-controls {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
