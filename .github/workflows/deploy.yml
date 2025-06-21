@@ -1,0 +1,44 @@
+name: Deploy to GitHub Pages
+
+# Trigger: when pushing to main branch
+on:
+  push:
+    branches: [ main ]
+
+# Set permissions
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Checkout code
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    # Setup Node.js environment
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    # Install dependencies
+    - name: Install dependencies
+      run: npm ci
+      
+    # Build project
+    - name: Build
+      run: npm run build
+      
+    # Deploy to gh-pages branch
+    - name: Deploy to gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
+        publish_branch: gh-pages
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com' 
