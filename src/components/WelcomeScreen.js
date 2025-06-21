@@ -6,7 +6,6 @@ import Button from '@mui/material/Button';
 
 function WelcomeScreen({ setShowWelcomeScreen, welcomeImg }) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [typedText, setTypedText] = useState("");
   const words = ['Hello', 'Hi', 'Hola', 'Merhaba', '你好', 'Bonjour', 'こんにちは'];
   const [stars, setStars] = useState([]);
   const [showStars, setShowStars] = useState(false);
