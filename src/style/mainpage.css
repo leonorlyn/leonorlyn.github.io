@@ -1,3 +1,9 @@
+/* 导入Google字体 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* 导入Satoshi字体 */
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;600;700;800;900&display=swap');
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,9 +12,11 @@ body, html {
   }
   
   .main-container {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
+    font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    background-color: #FFFFFF;
+    min-height: 100vh;
+    color: #3D3D3D;
+    line-height: 1.6;
   }
   
   .side-nav {
@@ -69,17 +77,18 @@ body, html {
   }
   
   .section {
-    margin-bottom: 100px;
-    padding: 50px 20px;
-    background: #ecf0f1;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   .section h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #3D3D3D;
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
   }
   
   .section p {
@@ -87,4 +96,279 @@ body, html {
     line-height: 1.6em;
     color: #34495e;
   }
+  
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    section {
+      padding: 3rem 1.5rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    section {
+      padding: 2rem 1rem;
+    }
+    
+    .section-title {
+      font-size: 1.75rem;
+    }
+  }
+  
+/* 主着陆页容器 */
+.landing-container {
+  min-height: 100vh;
+  background: #FFF9F4;
+  color: #2F2F2F;
+  font-family: 'Satoshi', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+/* 导航区域 */
+.nav-section {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* 导航项容器 */
+.nav-item-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 主要导航单词按钮 */
+.nav-word {
+  background: transparent;
+  border: none;
+  color: #2F2F2F;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 10;
+}
+
+/* ABOUT按钮 - 珊瑚色 */
+.nav-word[data-section="about"] {
+  color: #FFB7A5;
+}
+
+.nav-word[data-section="about"]:hover {
+  color: #FF9B85;
+  transform: translateY(-2px);
+  text-shadow: 0 8px 25px rgba(255, 183, 165, 0.3);
+}
+
+.nav-word[data-section="about"].active {
+  color: #FF9B85;
+  text-shadow: 0 8px 25px rgba(255, 183, 165, 0.4);
+}
+
+/* PORTFOLIO按钮 - 绿色 */
+.nav-word[data-section="portfolio"] {
+  color: #A4D4AE;
+}
+
+.nav-word[data-section="portfolio"]:hover {
+  color: #8CC99A;
+  transform: translateY(-2px);
+  text-shadow: 0 8px 25px rgba(164, 212, 174, 0.3);
+}
+
+.nav-word[data-section="portfolio"].active {
+  color: #8CC99A;
+  text-shadow: 0 8px 25px rgba(164, 212, 174, 0.4);
+}
+
+/* CONTACT按钮 - 薰衣草色 */
+.nav-word[data-section="contact"] {
+  color: #CAB8FF;
+}
+
+.nav-word[data-section="contact"]:hover {
+  color: #B8A3FF;
+  transform: translateY(-2px);
+  text-shadow: 0 8px 25px rgba(202, 184, 255, 0.3);
+}
+
+.nav-word[data-section="contact"].active {
+  color: #B8A3FF;
+  text-shadow: 0 8px 25px rgba(202, 184, 255, 0.4);
+}
+
+/* 特殊的"O"字母圆形效果 */
+.nav-word .letter-o {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  margin: 0 0.05em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.05em;
+}
+
+/* ABOUT中的O - 珊瑚色圆形 */
+.nav-word[data-section="about"] .letter-o {
+  background-color: #FFB7A5;
+}
+
+.nav-word[data-section="about"]:hover .letter-o,
+.nav-word[data-section="about"].active .letter-o {
+  background-color: #FF9B85;
+  box-shadow: 0 0 15px rgba(255, 183, 165, 0.5);
+}
+
+/* PORTFOLIO中的O - 绿色圆形 */
+.nav-word[data-section="portfolio"] .letter-o {
+  background-color: #A4D4AE;
+}
+
+.nav-word[data-section="portfolio"]:hover .letter-o,
+.nav-word[data-section="portfolio"].active .letter-o {
+  background-color: #8CC99A;
+  box-shadow: 0 0 15px rgba(164, 212, 174, 0.5);
+}
+
+/* CONTACT中的O - 薰衣草色圆形 */
+.nav-word[data-section="contact"] .letter-o {
+  background-color: #CAB8FF;
+}
+
+.nav-word[data-section="contact"]:hover .letter-o,
+.nav-word[data-section="contact"].active .letter-o {
+  background-color: #B8A3FF;
+  box-shadow: 0 0 15px rgba(202, 184, 255, 0.5);
+}
+
+/* 添加柔和的下划线效果 */
+.nav-word::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  border-radius: 1px;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.nav-word[data-section="about"]::after {
+  background: linear-gradient(90deg, transparent, #FFB7A5, transparent);
+}
+
+.nav-word[data-section="portfolio"]::after {
+  background: linear-gradient(90deg, transparent, #A4D4AE, transparent);
+}
+
+.nav-word[data-section="contact"]::after {
+  background: linear-gradient(90deg, transparent, #CAB8FF, transparent);
+}
+
+.nav-word:hover::after,
+.nav-word.active::after {
+  width: 80%;
+}
+
+/* 内容展开区域 */
+.content-section {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 3rem;
+}
+
+.content-inner {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .landing-container {
+    padding: 1rem;
+  }
+  
+  .nav-word {
+    font-size: clamp(3rem, 12vw, 6rem);
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-section {
+    gap: 2rem;
+  }
+  
+  .content-inner {
+    padding: 1rem 0;
+  }
+  
+  .nav-word .letter-o {
+    width: 0.7em;
+    height: 0.7em;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-word {
+    font-size: clamp(2.5rem, 15vw, 4rem);
+    letter-spacing: 0.05em;
+  }
+  
+  .nav-section {
+    gap: 1.5rem;
+  }
+  
+  .nav-word .letter-o {
+    width: 0.6em;
+    height: 0.6em;
+  }
+}
+
+/* 焦点和无障碍性 */
+.nav-word:focus {
+  outline: 2px solid rgba(255, 183, 165, 0.5);
+  outline-offset: 8px;
+  border-radius: 12px;
+}
+
+/* 选择文本样式 */
+.nav-word::selection {
+  background: rgba(255, 183, 165, 0.2);
+}
+
+/* 动画优化 */
+@media (prefers-reduced-motion: reduce) {
+  .nav-word {
+    transition: color 0.2s ease;
+  }
+  
+  .nav-word::after {
+    transition: width 0.2s ease;
+  }
+  
+  .nav-word .letter-o {
+    transition: background-color 0.2s ease;
+  }
+}
   

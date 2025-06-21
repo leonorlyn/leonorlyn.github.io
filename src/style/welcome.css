@@ -1,83 +1,300 @@
-.welcomeScreen {
-    color: white;
-    background-color: black;
-    min-height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    z-index: 2;
-  }
+/* 欢迎屏幕主容器 */
+.welcome-screen {
+  background: linear-gradient(135deg, #FFF9F4 0%, #F5F0EB 50%, #E6E1DC 100%);
+  color: #2F2F2F;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Satoshi', sans-serif;
+}
 
-  .fancy-button {
-    position: relative;
-    overflow: hidden;
-    margin-top: 40px;
-    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 25px;
-    box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
-    z-index: 1;
-  }
-  
-  .fancy-button .shine {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 300%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: skewX(-45deg);
-    transition: left 1s;
-    z-index: 1;
-  }
-  
-  .fancy-button:hover .shine {
-    left: 100% !important;
-    background: rgba(255, 255, 255, 0.5) !important;
-  }
-  
+/* 问候动画容器 */
+.greeting-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
 
-  .star {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-image: url('../assets/star1.png'); 
-    background-size: cover;
-    animation: float 3s infinite;
-    z-index: 3;
+.greeting-word {
+  text-align: center;
+  animation: greetingPulse 0.6s ease-in-out;
+}
+
+/* 不同颜色的问候语阴影效果 */
+.greeting-word.greeting-lavender {
+  text-shadow: 0 4px 15px rgba(202, 184, 255, 0.3);
+}
+
+.greeting-word.greeting-green {
+  text-shadow: 0 4px 15px rgba(164, 212, 174, 0.3);
+}
+
+.greeting-word.greeting-coral {
+  text-shadow: 0 4px 15px rgba(255, 183, 165, 0.3);
+}
+
+@keyframes greetingPulse {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 主要内容区域 */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  z-index: 2;
+}
+
+.title-container {
+  margin-bottom: 2rem;
+}
+
+.main-title {
+  background: linear-gradient(135deg, #2F2F2F 0%, #FFB7A5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  animation: titleSlideIn 0.8s ease-out;
+}
+
+.subtitle {
+  color: #A4D4AE;
+  text-align: center;
+  animation: subtitleSlideIn 0.8s ease-out 0.2s both;
+}
+
+.description {
+  color: #666666;
+  text-align: center;
+  max-width: 600px;
+  animation: descriptionFadeIn 0.8s ease-out 0.4s both;
+}
+
+@keyframes titleSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtitleSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes descriptionFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 进入按钮 */
+.enter-button {
+  background: linear-gradient(135deg, #FFB7A5 0%, #FF9B85 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 25px rgba(255, 183, 165, 0.3) !important;
+  transition: all 0.3s ease !important;
+  animation: buttonFadeIn 0.8s ease-out 0.4s both;
+  position: relative;
+  z-index: 1;
+}
+
+.enter-button:hover {
+  background: linear-gradient(135deg, #FF9B85 0%, #FF8A70 100%) !important;
+  box-shadow: 0 12px 35px rgba(255, 183, 165, 0.4) !important;
+  transform: translateY(-3px) scale(1.05) !important;
+}
+
+.enter-button:active {
+  transform: translateY(-1px) scale(1.02) !important;
+}
+
+@keyframes buttonFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 按钮发光效果 */
+.button-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s ease;
+  border-radius: inherit;
+}
+
+.enter-button:hover .button-shine {
+  left: 100%;
+}
+
+.button-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* 浮动圆形装饰 */
+.floating-circle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: gentleFloat 4s infinite ease-in-out;
+  z-index: 1;
+}
+
+.floating-circle:nth-child(1) { background-color: rgba(255, 183, 165, 0.6); }
+.floating-circle:nth-child(2) { background-color: rgba(164, 212, 174, 0.6); }
+.floating-circle:nth-child(3) { background-color: rgba(202, 184, 255, 0.6); }
+.floating-circle:nth-child(4) { background-color: rgba(255, 183, 165, 0.4); }
+.floating-circle:nth-child(5) { background-color: rgba(164, 212, 174, 0.4); }
+.floating-circle:nth-child(6) { background-color: rgba(202, 184, 255, 0.4); }
+.floating-circle:nth-child(7) { background-color: rgba(255, 183, 165, 0.3); }
+.floating-circle:nth-child(8) { background-color: rgba(164, 212, 174, 0.3); }
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-15px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-15px) rotate(270deg);
+    opacity: 0.8;
+  }
+}
+
+.floating-circle.disperse {
+  animation: gentleDisperse 0.8s forwards ease-out;
+}
+
+@keyframes gentleDisperse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translate(var(--dx), var(--dy));
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .welcome-screen {
+    padding: 1.5rem;
   }
   
-  @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  .main-content {
+    max-width: 100%;
   }
   
-  .star.disperse {
-    animation: disperse 1s forwards;
+  .title-container {
+    margin-bottom: 1.5rem;
   }
   
-  @keyframes disperse {
-    0% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(2) translate(var(--dx), var(--dy));
-    }
+  .enter-button {
+    padding: 0.8rem 2rem !important;
+    font-size: 1rem !important;
   }
+  
+  .floating-circle {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-screen {
+    padding: 1rem;
+  }
+  
+  .title-container {
+    margin-bottom: 2rem;
+  }
+  
+  .enter-button {
+    padding: 0.7rem 1.8rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* 无障碍性和动画优化 */
+@media (prefers-reduced-motion: reduce) {
+  .greeting-word,
+  .main-title,
+  .subtitle,
+  .enter-button,
+  .floating-circle {
+    animation: none;
+  }
+  
+  .enter-button:hover {
+    transform: none !important;
+  }
+  
+  .button-shine {
+    display: none;
+  }
+}
   

@@ -1,73 +1,148 @@
-/* About Me container styles */
-.aboutme-container {
+/* About Me Section 样式 */
+.about-section {
+  padding: 4rem 2rem;
+  background: #FFFFFF;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #3D3D3D;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* 左侧文本部分 */
+.about-text {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 50px;
-  margin-left: 300px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1.5s ease-in;
+  min-height: 200px;
 }
 
-/* Text section */
-.aboutme-text {
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  padding: 50px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.aboutme-text:hover {
-  transform: scale(1.05);
-}
-
-.aboutme-text h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background: linear-gradient(to right, #2c2929, #ff309401);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.aboutme-text p {
-  font-size: 1.2em;
+.about-text p {
+  font-size: 1.125rem;
   line-height: 1.8;
-  color: #333;
-  margin-bottom: 20px;
+  color: #4B5563;
+  margin: 0;
+  font-weight: 400;
 }
 
-/* Image section */
-.aboutme-image {
-  flex: 1;
+/* 右侧详细信息 */
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.aboutme-image img {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+.detail-category {
+  background: #F9FAFB;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid #E5E7EB;
+  transition: all 0.3s ease;
 }
 
-.aboutme-image img:hover {
-  transform: scale(1.1);
+.detail-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: #D1D5DB;
 }
 
-/* Animation for fade-in */
-@keyframes fadeIn {
-from {
-  opacity: 0;
-  transform: translateY(30px);
+.detail-category h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4C5FD5;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.01em;
 }
-to {
-  opacity: 1;
-  transform: translateY(0);
+
+.detail-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+.detail-category li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #6B7280;
+  border-bottom: 1px solid #E5E7EB;
+  transition: color 0.2s ease;
+}
+
+.detail-category li:last-child {
+  border-bottom: none;
+}
+
+.detail-category li:hover {
+  color: #4C5FD5;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .about-text {
+    min-height: auto;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .about-details {
+    gap: 1.5rem;
+  }
+  
+  .detail-category {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 2rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .about-content {
+    gap: 2rem;
+  }
+  
+  .detail-category {
+    padding: 1rem;
+  }
+  
+  .detail-category h3 {
+    font-size: 1.125rem;
+  }
 }

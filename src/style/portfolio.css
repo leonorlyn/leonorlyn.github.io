@@ -1,114 +1,186 @@
-.portfolio-container {
-    padding: 20px;
-    max-width: 80%;
-    margin-left: 10%;
-    z-index:10000;
-  }
+/* Portfolio Section 样式 */
+.portfolio-section {
+  padding: 4rem 2rem;
+  background: #F9FAFB;
+}
 
-  .portfolio-title {
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    font-size: 2em;
-    color: #ffffff;
-    margin-bottom: 100px;
-    letter-spacing: 1.5px;
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #3D3D3D;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+/* 项目网格 */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* 项目卡片 */
+.project-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #E5E7EB;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: #4C5FD5;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3D3D3D;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.project-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #6B7280;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
+}
+
+/* 技术栈标签 */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background: #F3F4F6;
+  color: #4B5563;
+  padding: 0.375rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #E5E7EB;
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  background: #4C5FD5;
+  color: white;
+  border-color: #4C5FD5;
+}
+
+/* 项目链接 */
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.project-link {
+  flex: 1;
+  background: transparent;
+  border: 2px solid #E5E7EB;
+  color: #6B7280;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.project-link i {
+  font-size: 1rem;
+}
+
+.demo-link:hover {
+  background: #4C5FD5;
+  border-color: #4C5FD5;
+  color: white;
+}
+
+.github-link:hover {
+  background: #333333;
+  border-color: #333333;
+  color: white;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: 3rem 1.5rem;
   }
   
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
   
   .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .project-card {
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 20px;
-    position: relative;
+    padding: 1.5rem;
   }
   
-  .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .project-image {
-    width: 100%;
-    height: 80%;
-    cursor: pointer;
-    border-bottom: 1px solid #ddd;
-  }
-
   .project-title {
-    font-size: 1.5rem;
-    color: rgb(255, 255, 255); /* 默认标题颜色 */
-    cursor: pointer;
-    transition: color 0.3s ease; 
+    font-size: 1.25rem;
   }
   
-  .project-title:hover {
-    color: #c8667b; 
-    /* text-decoration: underline;  */
+  .project-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-section {
+    padding: 2rem 1rem;
   }
   
-  
-  
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .section-title {
+    font-size: 1.75rem;
   }
   
-  .modal-content {
-    /* background: white; */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 80%; 
-    height: 80%;
-    object-fit: cover;
-    text-align: center;
-    position: relative;
+  .project-card {
+    padding: 1.25rem;
   }
   
-  .large-image {
-    width: 100%;
-    height: 90%;
-    border-radius: 10px;
+  .project-links {
+    flex-direction: column;
+    gap: 0.75rem;
   }
   
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 60px;
-    cursor: pointer;
-    color: #de8c8c;
+  .tech-stack {
+    gap: 0.375rem;
   }
   
-  .gallery-controls {
-    display: flex;
-    justify-content: space-between;
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.625rem;
   }
-  
-  button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #555;
-  }
+}
   

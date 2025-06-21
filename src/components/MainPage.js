@@ -1,191 +1,78 @@
-import React, { useRef } from 'react';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import { Link } from 'react-scroll';
-import Introduction from './Introduction'; 
-import AboutMe from './AboutMe'; 
-import Portfolio from './Portfolio';
-import '../style/mainpage.css'; 
-import star from '../assets/3Dstar.png';
-import planet from '../assets/planet.png';
-import alien from '../assets/alien.png';
-import solar from '../assets/solar.png';
-
-
-
-const url = (name, wrap = false) =>
-  `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
-
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import AboutSection from './AboutSection';
+import PortfolioSection from './PortfolioSection';
+import ContactSection from './ContactSection';
+import '../style/mainpage.css';
 
 const MainPage = () => {
-  const parallax = useRef(null);
+  const [activeSection, setActiveSection] = useState(null);
+
+  const toggleSection = (section) => {
+    setActiveSection(activeSection === section ? null : section);
+  };
+
+  // 将字母"O"替换为圆形元素的函数
+  const renderWordWithCircleO = (word, section) => {
+    return word.split('').map((letter, index) => {
+      if (letter.toLowerCase() === 'o') {
+        return <span key={index} className="letter-o"></span>;
+      }
+      return letter;
+    });
+  };
+
+  const sections = [
+    { id: 'about', label: 'ABOUT', component: AboutSection },
+    { id: 'portfolio', label: 'PORTFOLIO', component: PortfolioSection },
+    { id: 'contact', label: 'CONTACT', component: ContactSection }
+  ];
+
   return (
-    // Navigation
-    <div style={{ width: '100%', height: '100%', display: 'flex' }}>
-      <nav className="side-nav">
-        <ul>
-          <li>
-            <Link
-              to="introduction"
-              spy={true}
-              smooth={true}
-              duration={500}
-              onClick={() => parallax.current.scrollTo(0)}
+    <div className="landing-container fade-in">
+      {/* 主要导航区域 */}
+      <div className="nav-section">
+        {sections.map((section) => (
+          <div key={section.id} className="nav-item-container">
+            <motion.button
+              className={`nav-word ${activeSection === section.id ? 'active' : ''}`}
+              data-section={section.id}
+              onClick={() => toggleSection(section.id)}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
-              Introduction
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="experience"
-              spy={true}
-              smooth={true}
-              duration={500}
-              onClick={() => parallax.current.scrollTo(1)}
-            >
-              Experience
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="portfolio"
-              spy={true}
-              smooth={true}
-              duration={500}
-              onClick={() => parallax.current.scrollTo(2)}
-            >
-              Project Showcase
-            </Link>
-          </li>
-        </ul>
-      </nav>
-
-
-      {/* main page scroll */}
-      <div style={{ width: '100%', height: '100%' }}>
-      <Parallax ref={parallax} pages={3}>
-
-        <ParallaxLayer
-          offset={0}
-          speed={0}
-          factor={3}
-          style={{
-            Index:2,
-            backgroundColor: 'rgba(23, 22, 22, 0.4)'
-          }}
-        />
-
-
-        {/* Introduction Section */}
-        <ParallaxLayer
-          offset={0}
-          speed={1}
-          style={{
-            zIndex: 1,
-            marginTop:'15%'
-          }}
-        >
-          <div id="introduction">
-            <Introduction />
+              {renderWordWithCircleO(section.label, section.id)}
+            </motion.button>
+            
+            {/* 展开的内容区域 */}
+            <AnimatePresence>
+              {activeSection === section.id && (
+                <motion.div
+                  className="content-section"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ 
+                    duration: 0.4, 
+                    ease: [0.25, 0.46, 0.45, 0.94] 
+                  }}
+                >
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={{ delay: 0.1, duration: 0.3 }}
+                    className="content-inner fade-in"
+                  >
+                    <section.component />
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
-        </ParallaxLayer>
-
-        {/* Experience Section */}
-        <ParallaxLayer
-          offset={1}
-          speed={0.5}
-          style={{
-            zIndex: 1,
-            marginTop:'-20%'
-          }}
-        >
-          <div id="experience">
-            <AboutMe />
-          </div>
-        </ParallaxLayer>
-
-        {/* Project Showcase Section */}
-        <ParallaxLayer
-          offset={2}
-          speed={0.5}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginTop:'-20%',
-            marginLeft:'5%',
-            backgroundImage: 'rgba(0, 0, 0, 0.4)',
-            zIndex: 1,
-          }}
-        >
-          <div id="portfolio">
-            <Portfolio />
-          </div>
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={0}
-          speed={0}
-          factor={3}
-          style={{
-            backgroundImage: url('stars', true),
-            backgroundSize: 'cover',
-          }}
-        />
-
-        <ParallaxLayer offset={0} speed={0.5} factor={1} style={{ pointerEvents: 'none', zIndex:3 }}>
-          <img src={star} style={{ width: '5%', marginLeft: '78%', marginTop:'10%', filter: 'saturate(0.8)'}} />
-          <img src={star} style={{ width: '5%', marginLeft: '90%', marginTop:'15%'}} />
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={0} speed={0.8} factor={1} style={{ pointerEvents: 'none', zIndex:3 }}>
-          <img src={planet} style={{ width: '10%', marginLeft: '10%', marginTop:'35%', filter: 'saturate(0.7)'}} />
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={1} speed={0.9} style={{ opacity: 0.1 }}>
-          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-          <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
-          <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '35%' }} />
-          <img src={url('cloud')} style={{ display: 'block', width: '21%', marginLeft: '70%' }} />
-          <img src={url('cloud')} style={{ display: 'block', width: '21%', marginLeft: '40%' }} />
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={1.3} speed={1} style={{ pointerEvents: 'none' }}>
-          <img src={solar} style={{ marginTop: '-0%', marginLeft:'0%', width: '35%'}} />
-        </ParallaxLayer>
-
-        {/* Scroll Interactions */}
-        <ParallaxLayer
-          offset={0}
-          speed={3}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={1}
-          speed={0.1}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-        </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={2}
-          speed={-0}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-          >
-        </ParallaxLayer>
-      </Parallax>
-    </div>
+        ))}
+      </div>
     </div>
   );
 };

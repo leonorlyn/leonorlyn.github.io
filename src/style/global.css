@@ -1,15 +1,164 @@
+/* 导入Satoshi字体 */
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;600;700;800;900&display=swap');
+
+/* 全局样式重置和基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Satoshi', 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #2F2F2F;
+  background-color: #FFF9F4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 移除默认的 MUI 样式 */
+.MuiButton-root {
+  text-transform: none !important;
+  font-family: 'Satoshi', 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E6E1DC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFB7A5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF9B85;
+}
+
+/* 选择文本的颜色 */
+::selection {
+  background-color: rgba(255, 183, 165, 0.3);
+  color: #2F2F2F;
+}
+
+/* 焦点样式 - 柔和的焦点环 */
+button:focus,
+a:focus {
+  outline: 2px solid rgba(255, 183, 165, 0.5);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* 链接样式 */
+a {
+  color: #FFB7A5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #FF9B85;
+  text-decoration: underline;
+}
+
+/* 通用动画类 */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scale-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scale-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(47, 47, 47, 0.1);
+}
+
+/* 软阴影样式 */
+.soft-shadow {
+  box-shadow: 0 4px 20px rgba(47, 47, 47, 0.08);
+}
+
+.soft-shadow-lg {
+  box-shadow: 0 8px 30px rgba(47, 47, 47, 0.12);
+}
+
+/* 圆角样式 */
+.rounded-soft {
+  border-radius: 16px;
+}
+
+.rounded-soft-lg {
+  border-radius: 24px;
+}
+
+/* 颜色工具类 */
+.bg-warm-white {
+  background-color: #FFF9F4;
+}
+
+.bg-light-gray {
+  background-color: #E6E1DC;
+}
+
+.text-coral {
+  color: #FFB7A5;
+}
+
+.text-green {
+  color: #A4D4AE;
+}
+
+.text-lavender {
+  color: #CAB8FF;
+}
+
+.text-dark-gray {
+  color: #2F2F2F;
+}
+
+/* 边框样式 */
+.border-soft {
+  border: 1px solid rgba(230, 225, 220, 0.8);
+}
+
+.border-coral {
+  border: 1px solid rgba(255, 183, 165, 0.5);
+}
+
+.border-green {
+  border: 1px solid rgba(164, 212, 174, 0.5);
+}
+
+.border-lavender {
+  border: 1px solid rgba(202, 184, 255, 0.5);
+}
+
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   height: 100%;
-  
-background-image: 
-  linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.95), 
-    rgba(34, 34, 34, 0.8), 
-    rgba(68, 68, 68, 0.9) 
-  );
-
 }

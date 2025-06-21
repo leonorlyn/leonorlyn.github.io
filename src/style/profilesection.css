@@ -1,0 +1,161 @@
+/* Profile Section 样式 */
+.profile-section {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.profile-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 头像容器 */
+.avatar-container {
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(76, 95, 213, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(76, 95, 213, 0.2);
+}
+
+/* 姓名和标题 */
+.profile-name {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3D3D3D;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.profile-title {
+  font-size: 1.25rem;
+  color: #6B7280;
+  margin: 0 0 3rem 0;
+  font-weight: 500;
+}
+
+/* 社交图标 */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.social-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #FFFFFF;
+  color: #6B7280;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon.linkedin:hover {
+  background: #0077B5;
+  color: white;
+}
+
+.social-icon.github:hover {
+  background: #333333;
+  color: white;
+}
+
+.social-icon.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white;
+}
+
+/* 简历按钮 */
+.resume-button {
+  background: transparent !important;
+  border: 2px solid #4C5FD5 !important;
+  color: #4C5FD5 !important;
+  padding: 12px 32px !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  text-transform: none !important;
+  transition: all 0.3s ease !important;
+  letter-spacing: 0.5px !important;
+}
+
+.resume-button:hover {
+  background: #4C5FD5 !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(76, 95, 213, 0.3) !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .profile-section {
+    padding: 4rem 1.5rem 3rem;
+  }
+  
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .profile-name {
+    font-size: 2.5rem;
+  }
+  
+  .profile-title {
+    font-size: 1.125rem;
+  }
+  
+  .social-icons {
+    gap: 1rem;
+  }
+  
+  .social-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-section {
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+  }
+  
+  .social-icons {
+    gap: 0.75rem;
+  }
+  
+  .social-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.125rem;
+  }
+} 
