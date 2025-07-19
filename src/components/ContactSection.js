@@ -96,7 +96,7 @@ const ContactSection = () => {
       
       <div className="contact-footer">
         <p className="availability-text">
-          Available for full-time opportunities starting Summer 2026
+          Available for full-time opportunities starting 2025 Dec 
         </p>
       </div>
     </div>
