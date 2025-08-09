@@ -5,17 +5,17 @@
   margin: 0 auto;
   padding: 3rem 2rem;
   color: #2F2F2F;
-  background: #E6E1DC;
-  border-radius: 24px;
-  border: 1px solid rgba(230, 225, 220, 0.8);
-  box-shadow: 0 8px 30px rgba(47, 47, 47, 0.08);
-  backdrop-filter: blur(10px);
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 /* ========== ABOUT SECTION ========== */
 .about-content {
-  background: linear-gradient(135deg, rgba(255, 183, 165, 0.1) 0%, #E6E1DC 100%);
-  border: 1px solid rgba(255, 183, 165, 0.3);
+  background: transparent;
+  border: none;
 }
 
 .about-grid {
@@ -251,8 +251,8 @@
 
 /* ========== PORTFOLIO SECTION ========== */
 .portfolio-content {
-  background: linear-gradient(135deg, rgba(164, 212, 174, 0.1) 0%, #E6E1DC 100%);
-  border: 1px solid rgba(164, 212, 174, 0.3);
+  background: transparent;
+  border: none;
 }
 
 .portfolio-grid {
@@ -375,8 +375,8 @@
 
 /* ========== CONTACT SECTION ========== */
 .contact-content {
-  background: linear-gradient(135deg, rgba(202, 184, 255, 0.1) 0%, #E6E1DC 100%);
-  border: 1px solid rgba(202, 184, 255, 0.3);
+  background: transparent;
+  border: none;
   text-align: center;
 }
 
@@ -495,7 +495,7 @@
 @media (max-width: 768px) {
   .section-content {
     padding: 2rem 1rem;
-    border-radius: 20px;
+    border-radius: 0;
   }
   
   .about-grid {
@@ -552,7 +552,7 @@
 @media (max-width: 480px) {
   .section-content {
     padding: 1.5rem 1rem;
-    border-radius: 16px;
+    border-radius: 0;
   }
   
   .profile-image {

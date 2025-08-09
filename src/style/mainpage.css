@@ -182,7 +182,9 @@ body, html {
 
 .nav-word[data-section="about"].active {
   color: #FF9B85;
-  text-shadow: 0 8px 25px rgba(255, 183, 165, 0.4);
+  text-shadow: 0 8px 25px rgba(255, 183, 165, 0.6);
+  transform: scale(1.05);
+  font-weight: 800;
 }
 
 /* PORTFOLIO按钮 - 绿色 */
@@ -198,7 +200,9 @@ body, html {
 
 .nav-word[data-section="portfolio"].active {
   color: #8CC99A;
-  text-shadow: 0 8px 25px rgba(164, 212, 174, 0.4);
+  text-shadow: 0 8px 25px rgba(164, 212, 174, 0.6);
+  transform: scale(1.05);
+  font-weight: 800;
 }
 
 /* CONTACT按钮 - 薰衣草色 */
@@ -214,7 +218,9 @@ body, html {
 
 .nav-word[data-section="contact"].active {
   color: #B8A3FF;
-  text-shadow: 0 8px 25px rgba(202, 184, 255, 0.4);
+  text-shadow: 0 8px 25px rgba(202, 184, 255, 0.6);
+  transform: scale(1.05);
+  font-weight: 800;
 }
 
 /* 特殊的"O"字母圆形效果 */
@@ -234,10 +240,15 @@ body, html {
   background-color: #FFB7A5;
 }
 
-.nav-word[data-section="about"]:hover .letter-o,
-.nav-word[data-section="about"].active .letter-o {
+.nav-word[data-section="about"]:hover .letter-o {
   background-color: #FF9B85;
   box-shadow: 0 0 15px rgba(255, 183, 165, 0.5);
+}
+
+.nav-word[data-section="about"].active .letter-o {
+  background-color: #FF9B85;
+  box-shadow: 0 0 20px rgba(255, 183, 165, 0.8);
+  transform: scale(1.2);
 }
 
 /* PORTFOLIO中的O - 绿色圆形 */
@@ -245,10 +256,15 @@ body, html {
   background-color: #A4D4AE;
 }
 
-.nav-word[data-section="portfolio"]:hover .letter-o,
-.nav-word[data-section="portfolio"].active .letter-o {
+.nav-word[data-section="portfolio"]:hover .letter-o {
   background-color: #8CC99A;
   box-shadow: 0 0 15px rgba(164, 212, 174, 0.5);
+}
+
+.nav-word[data-section="portfolio"].active .letter-o {
+  background-color: #8CC99A;
+  box-shadow: 0 0 20px rgba(164, 212, 174, 0.8);
+  transform: scale(1.2);
 }
 
 /* CONTACT中的O - 薰衣草色圆形 */
@@ -256,10 +272,15 @@ body, html {
   background-color: #CAB8FF;
 }
 
-.nav-word[data-section="contact"]:hover .letter-o,
-.nav-word[data-section="contact"].active .letter-o {
+.nav-word[data-section="contact"]:hover .letter-o {
   background-color: #B8A3FF;
   box-shadow: 0 0 15px rgba(202, 184, 255, 0.5);
+}
+
+.nav-word[data-section="contact"].active .letter-o {
+  background-color: #B8A3FF;
+  box-shadow: 0 0 20px rgba(202, 184, 255, 0.8);
+  transform: scale(1.2);
 }
 
 /* 添加柔和的下划线效果 */
@@ -287,9 +308,12 @@ body, html {
   background: linear-gradient(90deg, transparent, #CAB8FF, transparent);
 }
 
-.nav-word:hover::after,
-.nav-word.active::after {
+.nav-word:hover::after {
   width: 80%;
+}
+
+.nav-word.active::after {
+  width: 0;
 }
 
 /* 内容展开区域 */
@@ -347,9 +371,7 @@ body, html {
 
 /* 焦点和无障碍性 */
 .nav-word:focus {
-  outline: 2px solid rgba(255, 183, 165, 0.5);
-  outline-offset: 8px;
-  border-radius: 12px;
+  outline: none;
 }
 
 /* 选择文本样式 */
