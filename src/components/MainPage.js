@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AboutSection from './AboutSection';
-import PortfolioSection from './PortfolioSection';
-import ContactSection from './ContactSection';
+import Portfolio from './Portfolio';
+import Contact from './Contact';
 import '../style/mainpage.css';
 
 const MainPage = () => {
@@ -24,8 +24,8 @@ const MainPage = () => {
 
   const sections = [
     { id: 'about', label: 'ABOUT', component: AboutSection },
-    { id: 'portfolio', label: 'PORTFOLIO', component: PortfolioSection },
-    { id: 'contact', label: 'CONTACT', component: ContactSection }
+    { id: 'portfolio', label: 'PORTFOLIO', component: Portfolio },
+    { id: 'contact', label: 'CONTACT', component: Contact }
   ];
 
   return (

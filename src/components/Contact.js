@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../style/sections.css';
 
-const ContactSection = () => {
+const Contact = () => {
   const [downloadStatus, setDownloadStatus] = useState('');
 
   const contactMethods = [
@@ -103,4 +103,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection; 
+export default Contact; 

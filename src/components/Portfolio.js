@@ -5,6 +5,20 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
+      title: "AI FlashCard Maker - Adobe Add-on Hackthon Winner",
+      description: "Adobe add-on that instantly turns documents and notes into engaging and print-ready flashcards, utilizing AI and auto-layout",
+      stack: ["React", "javascript", "LLM", "Flask"],
+      demoLink: "https://devpost.com/software/ai-flashcard-maker?ref_content=my-projects-tab&ref_feature=my_projects",
+    },
+    {
+      id: 2,
+      title: "TextWarp - Adobe Add-on Hackthon ",
+      description: "Warp words in a click for adobe express platform",
+      stack: ["React","javascript", "Warp Algorithm"],
+      demoLink: "https://github.com/leonorlyn/https://devpost.com/software/texteffect",
+    },
+    {
+      id: 3,
       title: "PANBOO GLOBAL E-Commerce Website",
       description: "A comprehensive e-commerce platform with modern UI/UX design and full-stack functionality.",
       stack: ["React", "Node.js", "MongoDB", "CSS3"],
@@ -12,7 +26,7 @@ const Portfolio = () => {
       githubLink: null,
     },
     {
-      id: 2,
+      id: 4,
       title: "MacOS Desktop App - Pause Time",
       description: "A productivity app for macOS that helps users manage break times and maintain healthy work habits.",
       stack: ["Swift", "macOS", "Core Data", "UI/UX Design"],
@@ -20,7 +34,7 @@ const Portfolio = () => {
       githubLink: "https://github.com/leonorlyn/PauseTime",
     },
     {
-      id: 3,
+      id: 5,
       title: "Official Website and Data Dashboard",
       description: "Corporate website with integrated analytics dashboard for business intelligence and reporting.",
       stack: ["React", "Chart.js", "Express", "PostgreSQL"],
@@ -28,7 +42,7 @@ const Portfolio = () => {
       githubLink: null,
     },
     {
-      id: 4,
+      id: 6,
       title: "AI-Based Employment Service Tool",
       description: "Machine learning application that predicts employment outcomes and provides career guidance.",
       stack: ["Python", "Scikit-learn", "Flask", "Data Analysis"],
